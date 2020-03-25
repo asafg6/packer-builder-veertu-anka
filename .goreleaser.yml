@@ -1,6 +1,12 @@
 builds:
-  - binary: packer-builder-veertu-anka.zip
+  - binary: packer-builder-veertu-anka
     goos:
       - darwin
     goarch:
       - amd64
+signs:
+ -
+    signature: "${artifact}.zip"
+    cmd: gon
+    args: ["${artifact}.hcl"]
+    artifacts: all
